@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package currencyexchange;
+
+option go_package = "github.com/Shashank-Panda/currency-exchange-grpc/grpc";
+
+service CurrencyExchange {
+  rpc GetExchangeRate (ExchangeRateRequest) returns (ExchangeRateResponse);
+}
+
+message ExchangeRateRequest {
+  string from_currency = 1;
+  string to_currency = 2;
+}
+
+message ExchangeRateResponse {
+  double exchange_rate = 1;
+}
